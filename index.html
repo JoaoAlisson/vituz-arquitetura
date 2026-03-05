@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vituz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
+        .module-section { margin-top: -100px; padding-top: 100px; } /* Anchor offset fix */
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 h-16 bg-white shadow-sm ring-1 ring-slate-200 z-50 flex items-center px-6 justify-between glass">
+        <div class="flex items-center gap-3">
+            <div class="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200">
+                <i class="fa-solid fa-heart-pulse text-white"></i>
+            </div>
+            <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-cyan-600">Vituz</h1>
+        </div>
+        <div>
+            <span class="text-sm text-slate-500"><i class="fa-solid fa-code-commit"></i> Arquitetura Global do Sistema</span>
+        </div>
+    </header>
+
+    <div class="flex pt-16 h-screen overflow-hidden">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-72 flex-shrink-0 border-r border-slate-200 bg-white shadow-sm overflow-y-auto hidden md:block z-40 relative">
+            <div class="p-6">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Módulos do Sistema</h2>
+                <nav class="space-y-1">
+                    <a href="#mod-financeiro" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-building-columns w-5 text-center text-slate-400"></i> Financeiro & Bancário
+                    </a>
+                    <a href="#mod-atendimento" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-stethoscope w-5 text-center text-slate-400"></i> Atendimento Ambulatorial
+                    </a>
+                    <a href="#mod-emergencia" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-truck-medical w-5 text-center text-slate-400"></i> Urgência & Emergência
+                    </a>
+                    <a href="#mod-internacao" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-bed-pulse w-5 text-center text-slate-400"></i> Internação Hospitalar
+                    </a>
+                    <a href="#mod-telemedicina" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-headset w-5 text-center text-slate-400"></i> Telemedicina
+                    </a>
+                    <a href="#mod-farmacia" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-pills w-5 text-center text-slate-400"></i> Estoque & Farmácia
+                    </a>
+                    <a href="#mod-regulacao" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-route w-5 text-center text-slate-400"></i> Regulação (Vagas)
+                    </a>
+                    <a href="#mod-escalas" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-calendar-days w-5 text-center text-slate-400"></i> Escalas & Plantões
+                    </a>
+                    <a href="#mod-exames" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-microscope w-5 text-center text-slate-400"></i> Laboratório & Exames
+                    </a>
+                    <a href="#mod-sus" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-file-medical w-5 text-center text-slate-400"></i> Integrações SUS / BPA
+                    </a>
+                    <a href="#mod-rh" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors">
+                        <i class="fa-solid fa-users w-5 text-center text-slate-400"></i> RH & Colaboradores
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200 bg-slate-50">
+                <p class="text-xs text-slate-500 text-center">Gerado automaticamente por análise da base de código.</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto bg-slate-50/50 p-8 scroll-smooth pb-32">
+            
+            <div class="max-w-5xl mx-auto space-y-12">
+                
+                <!-- Intro Section -->
+                <section class="mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Arquitetura de Negócio - Vituz</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        O Sistema Vituz é um ecossistema completo de gestão de saúde pública focado em monitorar e controlar as informações de toda a cadeia de cuidado (PluralMed). 
+                        Esta documentação detalha os módulos contidos na aplicação, as funcionalidades providas pelos <strong>Controllers</strong> e as <strong>Regras de Negócio</strong> imbutidas nos <strong>Services</strong>.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fa-solid fa-database text-6xl text-blue-500"></i></div>
+                            <h3 class="text-3xl font-bold text-slate-800 mb-1">500+</h3>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Modelos de Dados</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fa-solid fa-server text-6xl text-blue-500"></i></div>
+                            <h3 class="text-3xl font-bold text-slate-800 mb-1">200+</h3>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Controllers (Rotas)</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><i class="fa-solid fa-gears text-6xl text-blue-500"></i></div>
+                            <h3 class="text-3xl font-bold text-slate-800 mb-1">100+</h3>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Serviços de Negócio</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-200">
+
+                <!-- Module: Financeiro & Bancário -->
+                <section id="mod-financeiro" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-xl border border-emerald-200">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Financeiro & Integração Bancária</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="p-6 border-b border-slate-100 bg-slate-50/50">
+                            <p class="text-slate-600">Este módulo gerencia toda a movimentação financeira da cadeia, integrações com bancos (PIX, Boletos) e integração com o sistema ERP Sankhya.</p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <!-- Funcionalidades (Controllers) -->
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                                        <span><strong>Gestão de Contas:</strong> ContaBancariaController, ExtratoBancarioController, FluxoCaixaController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                                        <span><strong>Lançamentos e Movimentações:</strong> MovimentacaoFinanceiraController, LancamentoFinanceiroController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                                        <span><strong>Pagamentos e Autorizações:</strong> AutorizacaoPagamentosController, AssinarMovimentacaoUsuarioController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                                        <span><strong>Análise & DRE:</strong> DreHistoricController, AnaliseFinanceiraController, ConsolidacaoFinanceiraController.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Regras de Negócio (Services) -->
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                                        <div>
+                                            <strong>BankingService / BradescoService / SantanderBankingServiceProvider:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Abstração que processa conciliação e geração de arquivos OFX e comunicação bancária via API.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                                        <div>
+                                            <strong>BoletoPaymentService / PixPaymentService / QrCodePaymentService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Processamento e validação de código de barras, PIX e controle de restrições (ex: boletos rejeitados).</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                                        <div>
+                                            <strong>SankhyaApiService / SankhyaImportService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Integração bidirecional do faturamento da PluralMed com o ERP Sankhya.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Module: Atendimento Ambulatorial -->
+                <section id="mod-atendimento" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl border border-blue-200">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Atendimento Ambulatorial</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
+                                        <span><strong>Gestão de Consultas:</strong> ConsultaMedicaController, AmbulatorialController, AtendimentoEspecializadoController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
+                                        <span><strong>Prescrições e Prontuários:</strong> PrescricaoMedicaController, PrescricaoEnfermagemController, ProntuarioController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-blue-500 mt-1"></i>
+                                        <span><strong>Filas / Senhas:</strong> PainelAtendimentoController, PainelChamadaController, SenhasAtendimentoController.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                                        <div>
+                                            <strong>AtendimentoService / ProducaoConsultasService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Fluxo completo do paciente, desde a admissão até a evolução clínica, validando dependências do paciente e restrições SUS.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                                        <div>
+                                            <strong>DigitalSignatureService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Assinatura digital de prescrições e atestados com validade legal via CFM.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Module: Urgência e Emergência -->
+                <section id="mod-emergencia" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-xl border border-red-200">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Urgência & Emergência (UPA)</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-red-500 mt-1"></i>
+                                        <span><strong>Acolhimento & Triagem:</strong> EmergenciaAcolhimentoController, EmergenciaClassificacaoRiscoController, ProntoAtendimentoTriagemController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-red-500 mt-1"></i>
+                                        <span><strong>Observação e Internação Curta:</strong> EmergenciaObservacaoController, EmergenciaSalaMedicacaoController.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-red-500 mt-1"></i>
+                                        <div>
+                                            <strong>ClassificacaoRiscoService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Algoritmo de triagem baseado em Manchester (Azul, Verde, Amarelo, Laranja, Vermelho), definindo fluxo de prioridade.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-red-500 mt-1"></i>
+                                        <div>
+                                            <strong>MonitoramentoUrgenciaService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Controla superlotação (Dashboard de ocupação por cor) e tempos de espera de pacientes na unidade.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Module: Internação Hospitalar -->
+                <section id="mod-internacao" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl border border-purple-200">
+                            <i class="fa-solid fa-bed-pulse"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Internação Hospitalar</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-purple-500 mt-1"></i>
+                                        <span><strong>Censo Hospitalar e Leitos:</strong> InternacaoController, InternacaoLeitoController, InternacaoClinicaController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-purple-500 mt-1"></i>
+                                        <span><strong>Gestão de Transferências e Altas:</strong> InternacaoAltaMedicaController, InternacaoLeitoMovimentacaoController, SolicitacaoAihController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-purple-500 mt-1"></i>
+                                        <span><strong>Módulos Especializados:</strong> GestanteInternacaoController, NeonatalInternacaoController.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-purple-500 mt-1"></i>
+                                        <div>
+                                            <strong>EmergenciaHospitalarService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Atualização contínua do status dos leitos (Higienização, Manutenção, Ocupado, Livre), garantindo giro de leitos ágil.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-purple-500 mt-1"></i>
+                                        <div>
+                                            <strong>SolicitacaoAihService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Processamento de Autorização de Internação Hospitalar e faturamento SUS relacionado à permanência.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Module: Estoque e Farmácia -->
+                <section id="mod-farmacia" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl border border-indigo-200">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Estoque & Farmácia (BNAFAR)</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-indigo-500 mt-1"></i>
+                                        <span><strong>Controle de Estoque:</strong> EstoqueController, MonitoramentoFarmaciaController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-indigo-500 mt-1"></i>
+                                        <span><strong>Dispensação e Receituário:</strong> ReceitaMedicaController, CidadaoMedicamentoController, CidadaoMedicamentoCronicoController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-indigo-500 mt-1"></i>
+                                        <span><strong>Integração Nacional:</strong> BnafarController (Base Nacional de Dados de Ações e Serviços da Assistência Farmacêutica).</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-indigo-500 mt-1"></i>
+                                        <div>
+                                            <strong>FarmaciaService / SolcitacaoMedicamentoService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Baixa de estoque vinculada a aprazamento e administração de dose com código de barras, evitando desperdício e fraudes.</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-indigo-500 mt-1"></i>
+                                        <div>
+                                            <strong>BnafarService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Transmissão automatizada de remessas periódicas das dispensações de medicamentos para o Governo Federal via serviço SOAP/REST do Ministério da Saúde.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Module: Telemedicina -->
+                <section id="mod-telemedicina" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-600 text-xl border border-cyan-200">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Telemedicina & Interconsulta</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                                        <span><strong>Salas Virtuais:</strong> TeleAtendimentoController, InterconsultaController, ChamadaController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-cyan-500 mt-1"></i>
+                                        <span><strong>Integrações WebRTC:</strong> Configuração e agendamento de links protegidos.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-cyan-500 mt-1"></i>
+                                        <div>
+                                            <strong>InterconsultaService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Gerencia conexão criptografada, gerando tokens temporários para paciente e profissional, com gravação e log de auditoria em nuvem.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Module: SUS Integrations -->
+                <section id="mod-sus" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 text-xl border border-yellow-200">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Integrações SUS (BPA, CIHA, SISAB)</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="p-6 border-b border-slate-100 bg-slate-50/50">
+                            <p class="text-slate-600">Comunidade vital para repasse de verbas públicas da PluralMed, envolvendo a geração de arquivos formatados compatíveis com Datasus.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-yellow-500 mt-1"></i>
+                                        <span><strong>Tabelas Ministeriais:</strong> SigtapController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-yellow-500 mt-1"></i>
+                                        <span><strong>Faturamento SUS (BPA):</strong> BPAController, FaturamentoBPAController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-yellow-500 mt-1"></i>
+                                        <span><strong>Atenção Primária:</strong> EsusPrevineBrasilController, SisabCriancaController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-yellow-500 mt-1"></i>
+                                        <span><strong>Arquivos de Repasse:</strong> CIHA01Controller, SISAIH01Controller.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-yellow-500 mt-1"></i>
+                                        <div>
+                                            <strong>BPAFileGeneratorService / CIHA01FileGeneratorService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Condensação de todos os procedimentos ambulatoriais em arquivos estruturados (.txt DATASUS), agregados (BPA-C) e individualizados (BPA-I).</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-yellow-500 mt-1"></i>
+                                        <div>
+                                            <strong>DadosEsusService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Captura indicadores de desempenho para o programa Previne Brasil (Cito, Vacinas, Hipertensos, DM).</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                 <!-- Module: Escalas e Plantões -->
+                 <section id="mod-escalas" class="module-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 text-xl border border-teal-200">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-800">Escalas & Gestão de Plantões</h2>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mb-6">
+                        <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                            <div class="p-6">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-window-maximize"></i> Funcionalidades (Telas/API)</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                        <span><strong>Gestão de Escalas:</strong> EscalaMedicaController, EscalaController, PlantaoController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                        <span><strong>Pagamentos de Plantão:</strong> EscalaPagamentosController, EscalaValoresController.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                        <span><strong>Relatórios:</strong> RelatorioEscalaMedicaController, RelatorioEmergenciaController.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-50/30">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-gears"></i> Regras de Negócio e Serviços</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-700">
+                                        <i class="fa-solid fa-code text-teal-500 mt-1"></i>
+                                        <div>
+                                            <strong>EscalaMedicaService:</strong>
+                                            <p class="text-slate-500 text-xs mt-1">Valida choques de horários, regras de carga horária máxima, disponibilidade de profissionais substitutos, troca de plantão e valores devidos.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm pb-10">
+                    <p>Vituz &copy; 2026. Documentação Estrutural e Funcional.</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
